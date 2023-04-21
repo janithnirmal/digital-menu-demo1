@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-12 p-0">
                                 <div class="row m-0 py-3">
-                                    <button class="btn btn-primary" type="submit" id="signInBtn">Sign In</button>
+                                    <button class="btn btn-primary" onclick="signIn();" id="signInBtn">Sign In</button>
                                 </div>
                             </div>
 
