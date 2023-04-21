@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="bootstrap.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/bootstrap.css" />
     </head>
     <body>
         <div class="container-fluid">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
-        <script src="bootstrap.bundle.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/bootstrap.bundle.js"></script>
     </body>
 </html>
