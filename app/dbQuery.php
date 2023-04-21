@@ -13,7 +13,7 @@ class DB
         $host = 'localhost';
         $user = 'root';
         $password = 'JanithNirmal12#$';
-        $database = 'project-pla';
+        $database = 'digital_menu_demo_1';
 
         $this->host = $host;
         $this->user = $user;
