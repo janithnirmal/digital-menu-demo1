@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION["menudemo1admin"])) {
+    $USER_DATA = $_SESSION['menudemo1admin'];
+    header("Location:adminPanel.php");
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
