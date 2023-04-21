@@ -12,7 +12,7 @@
         <?php
         for ($y = 1; $y < 6; $y++) {
         ?>
-            <div class="col-12 col-lg-6 offset-3 bg-dark rounded-4 mt-2 " style="overflow: hidden;">
+            <div class="col-12 col-lg-6 offset-lg-3 bg-dark rounded-4 mt-2 " style="overflow: hidden;">
                 <div class="row mb-2">
                     <div class="col-12 bg-secondary  mb-3 item1  px-2 item4to">
                         <h1 class="mt-5 fw-bold fs-2 text-white ms-2">Food Item <?php echo ($y); ?></h1>

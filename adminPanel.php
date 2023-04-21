@@ -55,7 +55,7 @@
             </nav>
             <!--  -->
             <div class="col-12 p-0">
-                <div class="row m-0" id="adminContentContainer">
+                <div class="row m-0 p-3" id="adminContentContainer">
                     <?php
                     include 'templates/addCategory.php';
                     ?>
