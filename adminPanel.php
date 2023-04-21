@@ -60,6 +60,9 @@ if (isset($_SESSION["menudemo1admin"])) {
                                     <li><a onclick="contentChanger('categoryList')" class="dropdown-item" href="#">Category List</a></li>
                                 </ul>
                             </li>
+                            <li class="nav-item p-2">
+                                  <button class="bg-warning" onclick ="logOutAdmin();">Log Out</button>
+                            </li>
                         </ul>
                     </div>
                 </div>

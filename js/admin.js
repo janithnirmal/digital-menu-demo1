@@ -33,7 +33,22 @@ function signIn() {
     .then((err) => console.log(err));
 }
 
-// // test
+function logOutAdmin() {
+  fetch("api/signOutProcess.php") //our request file
+  .then(response => response.text()) //then now check response == text
+  .then(data => {     //data arrow function
+    if (data === 'log out') {  //data == 'our signOutProcess.php' response text
+      window.location.reload(); //then reload signIn.php
+    }else{
+      console.log('Unexpected response:', data);  //error handaling (Unexpected response)
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error); //error handaling
+  })
+}
+
+// test
 // let age = 21;
 // let name = "janith";
 

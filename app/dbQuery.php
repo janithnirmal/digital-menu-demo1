@@ -12,8 +12,8 @@ class DB
     {
         $host = 'localhost';
         $user = 'root';
-        $password = 'JanithNirmal12#$';
-        $database = 'digital_menu_demo_1';
+        $password = '#Apeamma2001';
+        $database = 'menu-demo-1';
 
         $this->host = $host;
         $this->user = $user;
