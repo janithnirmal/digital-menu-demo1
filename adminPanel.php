@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
 </head>
 
-<body class="bg-danger" style="background-color: red;">
+<body style="background-color: #0f0f0f;">
     <div class="container-fluid">
         <div class="row">
             <!-- Nav Bar -->
@@ -35,18 +35,8 @@
                                     Add New
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Add New Product</a></li>
-                                    <li><a class="dropdown-item" href="#">Add New Category</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Edit & Customizations
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Edit Product</a></li>
-                                    <li><a class="dropdown-item" href="#">Edit Category</a></li>
+                                    <li><a onclick="contentChanger('addProduct')" class="dropdown-item" href="#">Add New Product</a></li>
+                                    <li><a onclick="contentChanger('addCategory')" class="dropdown-item" href="#">Add New Category</a></li>
                                 </ul>
                             </li>
 
@@ -55,9 +45,8 @@
                                     Other
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Available</a></li>
-                                    <li><a class="dropdown-item" href="#">Unavailable</a></li>
-                                    <li><a class="dropdown-item" href="#">Category List</a></li>
+                                    <li><a onclick="contentChanger('allProductView')" class="dropdown-item" href="#">Product list</a></li>
+                                    <li><a onclick="contentChanger('categoryList')" class="dropdown-item" href="#">Category List</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -65,7 +54,7 @@
                 </div>
             </nav>
             <!--  -->
-            <div class="col-12 p-0 bg-dark">
+            <div class="col-12 p-0">
                 <div class="row m-0" id="adminContentContainer">
                     <?php
                     include 'templates/addCategory.php';
@@ -74,7 +63,7 @@
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
 </body>
 
