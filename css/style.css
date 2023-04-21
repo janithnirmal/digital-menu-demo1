@@ -1,11 +1,13 @@
-/* all the custom css styles will goes here.  */
-/* custom css, media queries and animations will goes here */
-/*
- the heirachy of code should be like this
-- variables if exists
-- pc size styles (directly without media queries)
-- tablet size styles (with media queries)
-- mobile size styles (with media queries)
-- animations
-*/
-/* each class name must indicate the usecase or used UI referance along with funtionality (ex: .reminder-list-container <- here the first word indicate the location and others will describe the functionality) */
+.item1{
+    background-color: blue;
+    height: 87px;
+}
+.footer{
+    background-image: linear-gradient(black, rgb(26, 25, 25),rgb(36, 34, 34),rgb(48, 47, 47));
+}
+/* .item4to{ */
+    /* background-image: linear-gradient(black, rgb(26, 25, 25),rgb(36, 34, 34),rgb(48, 47, 47)); */
+    /* background-image: url("resources/noodles.png"); */
+    
+    
+/* } */
