@@ -30,6 +30,7 @@ class Validator
         'lastname' => true,
         'email' => true,
         'slmobile' => true,
+        'priceDouble'=>true,
     );
 
 
@@ -52,6 +53,8 @@ class Validator
                     $response->$key = $this->descriptionValidator($value);
                 } else if ($key == 'slmobile') {
                     $response->$key = $this->slMobileValidator($value);
+                } else if ($key == 'priceDouble') {
+                    $response->$key = $this->doubleValidator($value);
                 }
             } else {
                 $response->$key = $this->customValidator($value);
@@ -70,6 +73,18 @@ class Validator
         if (!preg_match('/^[a-zA-Z0-9_-]+$/', $input)) {
             // input contains invalid characters
             return "input can only contain letters, numbers, underscores, and dashes.";
+        }
+    }
+
+    public function doubleValidator($input)
+    {
+        // Remove whitespace from beginning and end of name
+        $input = trim($input);
+
+        // Check if input contains only letters, numbers, underscores, and dashes
+        if (!preg_match('/^[+-]?\d+(.\d+)?$/', $input)) {
+            // input contains invalid characters
+            return "input should be a float";
         }
     }
 
