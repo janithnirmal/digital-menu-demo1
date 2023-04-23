@@ -1,13 +1,27 @@
-.item1{
-    background-color: blue;
-    height: 87px;
+.item1 {
+  background-color: blue;
+  height: 87px;
 }
-.footer{
-    background-image: linear-gradient(black, rgb(26, 25, 25),rgb(36, 34, 34),rgb(48, 47, 47));
+.footer {
+  background-image: linear-gradient(
+    black,
+    rgb(26, 25, 25),
+    rgb(36, 34, 34),
+    rgb(48, 47, 47)
+  );
 }
-/* .item4to{ */
-    /* background-image: linear-gradient(black, rgb(26, 25, 25),rgb(36, 34, 34),rgb(48, 47, 47)); */
-    /* background-image: url("resources/noodles.png"); */
-    
-    
-/* } */
+
+.item-image {
+  background-size: cover;
+  background-position: center;
+  background-color: gray;
+}
+
+.dark-gradiant {
+    z-index: 10;
+    background: linear-gradient( to top right, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.category-title {
+    z-index: 100;
+}
