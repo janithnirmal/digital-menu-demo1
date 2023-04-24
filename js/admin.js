@@ -35,17 +35,17 @@ function signIn() {
 
 function logOutAdmin() {
   fetch("api/signOutProcess.php") //our request file
-  .then(response => response.text()) //then now check response == text
-  .then(data => {     //data arrow function
-    if (data === 'log out') {  //data == 'our signOutProcess.php' response text
-      window.location.reload(); //then reload signIn.php
-    }else{
-      console.log('Unexpected response:', data);  //error handaling (Unexpected response)
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error); //error handaling
-  })
+    .then(response => response.text()) //then now check response == text
+    .then(data => {     //data arrow function
+      if (data === 'log out') {  //data == 'our signOutProcess.php' response text
+        window.location.reload(); //then reload signIn.php
+      } else {
+        console.log('Unexpected response:', data);  //error handaling (Unexpected response)
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error); //error handaling
+    })
 }
 // product Adding Process
 function AddNewProductSave() {
@@ -66,20 +66,39 @@ function AddNewProductSave() {
         productCategoryID: CategoryId,
       }),
   })
-  .then(response => response.text()) //then now check response == text
-  .then(data => {     
-    if (data === 'success') {  
-      alert("Product Adding Success"); 
-    }else{
-      console.log('Unexpected response:', data);  //error handaling (Unexpected response)
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error); //error handaling
-  })
+    .then(response => response.text()) //then now check response == text
+    .then(data => {
+      if (data === 'success') {
+        alert("Product Adding Success");
+      } else {
+        console.log('Unexpected response:', data);  //error handaling (Unexpected response)
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error); //error handaling
+    })
 }
+// add New Category
+function addNewCategory() {
+  let categoryName = document.getElementById("categoryName").value;
+  let categoryImage = document.getElementById("categoryImage").files[0];
 
+  // new formData
+  const formData = new FormData();
 
+  // Append the image file to the formData object
+  formData.append('categoryName', categoryName);
+  formData.append('categoryImage', categoryImage);
+
+  // Send the FormData object to the server using an AJAX request
+  fetch('api/categoryAddProcess.php', {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+}
 
 
 
