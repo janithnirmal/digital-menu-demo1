@@ -10,71 +10,116 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
 </head>
 
-<body>
+<body class="bg-black">
     <div class="container-fluid">
         <div class="row">
             <!-- Header -->
-            <div class="col-12 bg-black ">
-                <div class="row px-3 py-2 d-flex align-items-center">
-                    <div class="col-1 bg-white rounded-2 "><img src="" alt="" class=""></div>
-                    <div class="col-6 mt-2">
+            <div class="col-12 bg-dark py-2">
+                <div class="row px-3 py-1 d-flex align-items-center">
+                    <div class="col-3 p-0 fw-bold text-white rounded-2 ">LOGO</div>
+                    <div class="col-6">
                         <h6 class="text-white">Brand Name</h6>
                     </div>
-                    <div class="col-5 d-flex justify-content-end mt-2 ">
+                    <div class="col-3 d-flex justify-content-end">
                         <h5 class="text-warning">Menu</h5>
                     </div>
                 </div>
             </div>
             <!-- Content -->
-            <div class="col-12  bg-white">
-                <div class="row px-3 py-2">
+            <div class="col-12">
+                <div class="row px-1 py-1">
 
                     <!-- Available Unavailable buttons -->
-                    <div class="col-12 bg-black rounded-5">
-                        <div class="row py-2">
-                            <div class="d-grid col-6">
-                                <button class="btn btn-warning rounded-5">
-                                    <h2 class="fs-5 mt-1 fw-bold">Available</h2>
-                                </button>
-                            </div>
-                            <div class="col-6 d-grid text-start">
-                                <button class="btn btn-transparent  rounded-5">
-                                    <h2 class="fs-5 mt-1 text-white me-2">Unavailable</h2>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item cards -->
-                    <?php
-                    for ($y = 1; $y < 6; $y++) {
-                    ?>
-                        <div class="col-12 bg-black rounded-4 mt-2 " style="overflow: hidden;">
-                            <div class="row">
-                                <div class="col-12 bg-danger  mb-3 item1  px-2 item4to">
-                                    <h1 class="mt-5 fw-bold fs-2 text-white ms-2">Food Item <?php echo ($y); ?></h1>
-                                </div>
-                                <?php
-                                for ($x = 0; $x < 5; $x++) {
-                                ?>
-                                    <div class="col-12 ">
-                                        <div class=" text-white d-flex justify-content-between ">
-                                            <div class="">
-                                                <p class="fs-6 fw-bold">Item Name</p>
-                                            </div>
-                                            <div class="">
-                                                <p class="fs-6 fw-bold ">$20.00</p>
-                                            </div>
+                    <div class="offset-lg-3 col-lg-6 col-12 p-0">
+                        <div class="row m-0 p-2">
+                            <div class="col-12 bg-dark rounded-5 p-0">
+                                <div class="row p-2 m-0">
+                                    <div class="d-grid col-6 p-0">
+                                        <div class="row m-0 pe-1 p-0">
+                                            <button class="btn btn-warning rounded-5 fw-bold">Available</button>
                                         </div>
                                     </div>
-                                <?php
-                                }
-                                ?>
+                                    <div class="col-6 p-0 d-grid text-start">
+                                        <div class="row m-0 ps-1 p-0">
+                                            <button class="btn text-white btn-transparent fw-bold rounded-5">Unavailable</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
-                    <?php
-                    }
-                    ?>
+                    </div>
+                    <!-- Item cards -->
+                    <div class="container p-0 m-0">
+                        <div class="row m-0 p-2">
+                            <!-- Item cards -->
+
+
+                            <?php
+
+                            // Set the API endpoint URL
+                            $url = '127.0.0.1/personal/menu-projects/demo/digital-menu-demo1/api/productLoadProcess.php?requestData={"from":"client","availability":1}';
+
+                            // Initialize a new curl session
+                            $curl = curl_init();
+
+                            // Set the curl options
+                            curl_setopt_array($curl, array(
+                                CURLOPT_RETURNTRANSFER => true,
+                                CURLOPT_URL => $url
+                            ));
+
+                            // Execute the curl session
+                            $response = curl_exec($curl);
+
+                            // Check for errors
+                            if (curl_errno($curl)) {
+                                echo 'Error: ' . curl_error($curl);
+                            }
+
+                            // Close the curl session
+                            curl_close($curl);
+
+                            // echo $response;
+                            // Display the response from the API
+                            $resultObject =  json_decode($response)->results;
+                            foreach ($resultObject as $categoryObject) {
+                                $categoryItems = $categoryObject->categoryItems;
+                            ?>
+                                <div class="col-12 col-lg-6 offset-lg-3 bg-dark rounded-4 my-2 " style="overflow: hidden;">
+                                    <div class="row mb-2">
+                                        <div class="position-relative mb-3 p-0  item-image" style="background-image: url('resources/images/category/<?php echo $categoryObject->categoryImgUri ?>');">
+                                            <div class="h-100 w-100 position-absolute dark-gradiant"></div>
+                                            <div class="w-100 col-12 mb-1 item1  px-1 d-flex align-items-end">
+                                                <h1 onclick="contentChanger('updateCategory.php?id=1');" class="fw-bold fs-2  category-title ms-2 underline-hover"><?php echo ($categoryObject->categoryName) ?></h1>
+                                            </div>
+                                        </div>
+                                        <?php
+                                        echo (count($categoryItems) == 0) ? "<p class='fw-bold text-secondary'>No Meal to Load... </p>" : null;
+
+                                        foreach ($categoryItems as $categoryItemsObject) {
+                                        ?>
+                                            <div class="col-12 my-1">
+                                                <div class=" text-white h-100 d-flex justify-content-between underline-hover">
+                                                    <div class="h-100 d-flex justify-content-center align-items-center py-1 p-0 m-0">
+                                                        <p class="p-0 m-0 fs-6 fw-bold" id=""><?php echo ($categoryItemsObject->name) ?></p>
+                                                    </div>
+                                                    <div class="h-100 d-flex justify-content-center align-items-center py-1 p-0 m-0 ">
+                                                        <p class="p-0 m-0 fs-6 fw-bold">$<?php echo ($categoryItemsObject->price); ?>.00</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
