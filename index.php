@@ -58,7 +58,7 @@
                             <?php
 
                             // Set the API endpoint URL
-                            $url = '127.0.0.1/personal/menu-projects/demo/digital-menu-demo1/api/productLoadProcess.php?requestData={"from":"client","availability":1}';
+                            $url = '127.0.0.1/digital-menu-demo1/api/productLoadProcess.php?requestData={"from":"client","availability":1}';
 
                             // Initialize a new curl session
                             $curl = curl_init();

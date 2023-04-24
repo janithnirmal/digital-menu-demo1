@@ -87,7 +87,7 @@ function addNewCategory() {
   const formData = new FormData();
 
   // Append the image file to the formData object
-  formData.append('categoryName', categoryName);
+  formData.append('categoryName', JSON.stringify({ category: categoryName }));
   formData.append('categoryImage', categoryImage);
 
   // Send the FormData object to the server using an AJAX request
@@ -95,9 +95,18 @@ function addNewCategory() {
     method: 'POST',
     body: formData
   })
-    .then(response => response.text())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+    .then(response => response.text()) //then now check response == text
+    .then(data => {
+      if (data === 'success') {
+        alert("Category Adding Success");
+      } else {
+        console.log('Unexpected response:', data);  //error handaling (Unexpected response)
+         alert(data);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error); //error handaling
+    })
 }
 
 
