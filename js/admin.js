@@ -47,6 +47,41 @@ function logOutAdmin() {
     console.error('Error:', error); //error handaling
   })
 }
+// product Adding Process
+function AddNewProductSave() {
+  let productName = document.getElementById("productName").value;
+  let productPrice = document.getElementById("productPrice").value;
+  let CategoryId = document.getElementById("category").value;
+
+  fetch("api/productAddingProcess.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body:
+      "ProductAddingData=" +
+      JSON.stringify({
+        productName: productName,
+        priceDouble: productPrice,
+        productCategoryID: CategoryId,
+      }),
+  })
+  .then(response => response.text()) //then now check response == text
+  .then(data => {     
+    if (data === 'success') {  
+      alert("Product Adding Success"); 
+    }else{
+      console.log('Unexpected response:', data);  //error handaling (Unexpected response)
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error); //error handaling
+  })
+}
+
+
+
+
 
 // test
 // let age = 21;
