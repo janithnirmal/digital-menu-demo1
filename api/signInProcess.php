@@ -29,12 +29,12 @@ $database = new DB();
 $checkerQuery = "SELECT * FROM `admin` WHERE `mobile`=? AND `password`=?";
 $preparedStatement1 = $database->prepare($checkerQuery, 'ss', array($mobile, $password));
 $userDataRaw = $preparedStatement1->get_result();
-$userData = $userDataRaw->fetch_assoc();
-
 if (!$userDataRaw->num_rows) {
     echo ("Invalid Inputs");
     die();
 }
+
+$userData = $userDataRaw->fetch_assoc();
 
 // -> create a session and store data init
 session_start();
