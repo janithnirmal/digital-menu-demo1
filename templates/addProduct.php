@@ -1,6 +1,6 @@
 <?php
 // DataBase Path
-require_once "app/dbQuery.php";
+require_once "../app/dbQuery.php";
 // Call my Database
 $dataBase = new DB();
 // Search Database Category Table
