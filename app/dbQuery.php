@@ -13,7 +13,7 @@ class DB
         $host = 'localhost';
         $user = 'root';
         $password = '#Apeamma2001';
-        $database = 'menu-demo-1';
+        $database = 'digitel-menu-2023-04-25';
 
         $this->host = $host;
         $this->user = $user;
