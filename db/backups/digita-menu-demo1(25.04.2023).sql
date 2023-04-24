@@ -77,7 +77,7 @@ CREATE TABLE `category` (
   `category` varchar(100) NOT NULL,
   `img_url` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +86,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'potato',''),(2,'noodles',''),(3,'sandwich',''),(4,'chilli',''),(5,'burger',''),(6,'rice',''),(7,'nachos',''),(8,'pasta',''),(9,'roll',''),(10,'pizza','');
+INSERT INTO `category` VALUES (13,'noodles','noodles.jpg'),(14,'soup','soup.jpg'),(15,'rice','rice.jpg'),(16,'bread','bread.jpg');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +139,7 @@ CREATE TABLE `item` (
   KEY `fk_item_category1_idx` (`category_id`),
   CONSTRAINT `fk_item_availability` FOREIGN KEY (`availability_id`) REFERENCES `availability` (`id`),
   CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,6 +148,7 @@ CREATE TABLE `item` (
 
 LOCK TABLES `item` WRITE;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
+INSERT INTO `item` VALUES (5,'Onugbu Soup ',15,1,13,'2022-11-28 03:15:11'),(6,'Thick Soup',24,1,14,'2022-11-28 03:15:15'),(7,'Red Rice',20,2,15,'2022-11-28 03:15:16'),(8,'Breadstick',18,1,16,'2022-11-28 03:15:21'),(9,'Breadstick',17,1,13,'2022-11-28 03:15:11'),(10,'Bamen toodles. ',14,1,14,'2022-11-28 03:15:11'),(11,'Somen testt',12,2,16,'2022-11-28 03:15:11'),(12,'methory bugati',13,1,14,'2022-11-28 03:15:11'),(13,'kawaski miyori',14,1,15,'2022-11-28 03:15:11'),(14,'biyothoo puling',15,2,16,'2022-11-28 03:15:11'),(15,'chungu',12,1,13,'2022-11-28 03:15:11');
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -160,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-21 21:34:52
+-- Dump completed on 2023-04-25  1:52:21

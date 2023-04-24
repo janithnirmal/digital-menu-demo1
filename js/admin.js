@@ -53,13 +53,13 @@ function AddNewProductSave() {
   let productPrice = document.getElementById("productPrice").value;
   let CategoryId = document.getElementById("category").value;
 
-  fetch("api/productAddingProcess.php", {
+  fetch("api/productAddProcess.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body:
-      "ProductAddingData=" +
+      "productDetail=" +
       JSON.stringify({
         productName: productName,
         priceDouble: productPrice,

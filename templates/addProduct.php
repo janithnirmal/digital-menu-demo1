@@ -20,7 +20,8 @@ $result = $dataBase->query($query);
         <select class="form-select mt-2 mb-5" aria-label="Default select example" id="category">
             <option selected>Choose a category</option>
             <?php
-            for ($x=0; $x < $result->$num_rows; $x++) { 
+            for ($x=0; $x < $result->num_rows; $x++) {
+                 
                $categoryData =  $result->fetch_assoc();
                ?>
                <option value="<?php echo $categoryData["id"]?>"><?php echo $categoryData["category"]?></option>

@@ -13,6 +13,7 @@
 }
 
 .dark-gradiant {
+
   z-index: 10;
   background: linear-gradient(to top right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
@@ -30,3 +31,4 @@
   text-decoration: underline;
   color: rgb(165, 165, 165);
 }
+
