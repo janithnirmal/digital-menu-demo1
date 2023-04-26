@@ -70,7 +70,7 @@ if (isset($_SESSION["menudemo1admin"])) {
             </nav>
             <!--  -->
             <div class="col-12 p-0">
-                <div class="row m-0 py-3" id="adminContentContainer">
+                <div class="row m-0 py-3 px-2" id="adminContentContainer">
                     <?php
                     include 'templates/allProductView.php';
                     ?>
