@@ -14,7 +14,8 @@
         <?php
 
         // Set the API endpoint URL
-        $url = '127.0.0.1/digital-menu-demo1/api/productLoadProcess.php?requestData={"from":"admin"}';
+        // $url = '127.0.0.1/digital-menu-demo1/api/productLoadProcess.php?requestData={"from":"admin"}'; // madusha
+        $url = '127.0.0.1/personal/menu-projects/demo/digital-menu-demo1/api/productLoadProcess.php?requestData={"from":"admin"}'; // janith
 
         // Initialize a new curl session
         $curl = curl_init();
