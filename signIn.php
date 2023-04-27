@@ -38,7 +38,7 @@ if (isset($_SESSION["menudemo1admin"])) {
                             <div class="col-12 p-0">
                                 <div class="row m-0">
                                     <label class="form-label">password</label>
-                                    <input type="text" class="form-control" id="password" placeholder="Enter your password" />
+                                    <input type="password" class="form-control" id="password" placeholder="Enter your password" />
                                 </div>
                             </div>
                             <div class="col-12 p-0">
