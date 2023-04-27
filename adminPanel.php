@@ -32,8 +32,8 @@ if (isset($_SESSION["menudemo1admin"])) {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <!-- <a class="navbar-brand w-100 fw-bold bg-danger" href="#">LOGO</a> -->
-                    <div class="collapse p-0 m-0 navbar-collapse" id="navbarNavDropdown">
-                        <div class="navbar-nav w-100 p-0 m-0 d-flex justify-content-around align-items-center w-100">
+                    <div class="gap-2 collapse p-0 m-0 navbar-collapse" id="navbarNavDropdown">
+                        <div class="gap-2 navbar-nav w-100 p-0 m-0 d-flex justify-content-around align-items-center w-100">
                             <div class="nav my-1 -item w-100">
                                 <a class="nav-link active text-center w-100 text-white fw-bold" aria-current="page" href="#">Admin</a>
                             </div>
@@ -52,8 +52,8 @@ if (isset($_SESSION["menudemo1admin"])) {
                                 </ul>
                             </div>
 
-                            <div class="btn btn-secondary w-100 my-1  nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="w-100 my-1  nav-item dropdown">
+                                <a class="btn btn-secondary btn btn-secondary  nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     View
                                 </a>
                                 <ul class="dropdown-menu mt-1">

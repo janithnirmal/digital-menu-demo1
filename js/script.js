@@ -1,4 +1,5 @@
 // all custom JS will goes here
+let clickedButtonAvailability = 1;
 
 function menuLoad(param) {
   fetch("templates/menuAllItemLoader.php?param=" + param, {
@@ -26,6 +27,8 @@ function availableBtnColorChanger(event) {
     document.getElementById("btn2").classList.add("text-white");
     document.getElementById("btn2").classList.remove("btn-warning");
     document.getElementById("btn2").classList.remove("text-dark");
+
+    clickedButtonAvailability = 1;
   } else if (button == "btn2") {
     document.getElementById("btn2").classList.add("btn-warning");
     document.getElementById("btn2").classList.add("text-dark");
@@ -36,5 +39,15 @@ function availableBtnColorChanger(event) {
     document.getElementById("btn1").classList.add("text-white");
     document.getElementById("btn1").classList.remove("btn-warning");
     document.getElementById("btn1").classList.remove("text-dark");
+
+    clickedButtonAvailability = 2;
   }
 }
+
+setInterval(() => {
+  if (clickedButtonAvailability == 1) {
+    menuLoad("available");
+  } else if (clickedButtonAvailability == 2) {
+    menuLoad("unavailable");
+  }
+}, 10000);

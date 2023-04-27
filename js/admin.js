@@ -122,15 +122,21 @@ function availabilityChangerAdmin(event) {
     .then((data) => console.log(data))
     .then((err) => console.log(err));
 
-  if (value == 1) {
+  if (value == 2) {
     event.target.classList.add("btn-secondary");
     event.target.classList.add("text-white");
+    event.target.classList.remove("btn-warning");
+    event.target.classList.remove("text-dark");
+
+    event.target.innerHTML = "Unavailable";
+    event.target.dataset.value = 1;
+  } else if (value == 1) {
+    event.target.classList.add("btn-warning");
+    event.target.classList.add("text-dark");
     event.target.classList.remove("btn-secondary");
     event.target.classList.remove("text-white");
-  } else if (value == 2) {
-    event.target.classList.add("btn-secondary");
-    event.target.classList.add("text-white");
-    event.target.classList.remove("btn-secondary");
-    event.target.classList.remove("text-white");
+
+    event.target.innerHTML = "Available";
+    event.target.dataset.value = 2;
   }
 }

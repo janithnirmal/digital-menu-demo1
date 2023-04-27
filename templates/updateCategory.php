@@ -5,7 +5,7 @@
                 <div class="row m-0">
                     <div class="col-2 p-0">
                         <div class="row p-0 h-100 d-flex justify-content-center align-items-center">
-                            <i class="bi fs-3 text-white bi-arrow-left-square-fill"></i>
+                            <i onclick="contentChanger('allProductView');" class="bi fs-3 text-white bi-arrow-left-square-fill"></i>
                         </div>
                     </div>
                     <div class="col-10 p-0">
