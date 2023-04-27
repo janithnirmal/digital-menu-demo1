@@ -65,11 +65,11 @@
                                     <?php
                                     if ($categoryItemsObject->availability_id == 1) {
                                     ?>
-                                        <button class="btn btn-secondary fw-bold" id="">available</button>
+                                        <button onclick="availabilityChangerAdmin(event);" data-itemId="<?php echo ($categoryItemsObject->id); ?>" data-value="2" class="btn btn-secondary text-white fw-bold" id="">available</button>
                                     <?php
                                     } else {
                                     ?>
-                                        <button class="btn btn-warning fw-bold" id="">Unavailable</button>
+                                        <button onclick="availabilityChangerAdmin(event);" data-itemId="<?php echo ($categoryItemsObject->id); ?>" data-value="1" class="btn btn-warning text-dark fw-bold" id="">Unavailable</button>
                                     <?php
                                     }
 

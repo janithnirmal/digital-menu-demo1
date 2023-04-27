@@ -35,11 +35,11 @@ if (isset($_SESSION["menudemo1admin"])) {
                     <div class="collapse p-0 m-0 navbar-collapse" id="navbarNavDropdown">
                         <div class="navbar-nav w-100 p-0 m-0 d-flex justify-content-around align-items-center w-100">
                             <div class="nav my-1 -item w-100">
-                                <a class="nav-link active text-center w-100 text-white fw-bold" aria-current="page" href="#">My Profile</a>
+                                <a class="nav-link active text-center w-100 text-white fw-bold" aria-current="page" href="#">Admin</a>
                             </div>
 
                             <div class="nav-item w-100  my-1 ">
-                                <a class="btn btn-secondary nav-link text-warning fw-bold " href="index.php">All</a>
+                                <a class="btn btn-secondary nav-link text-warning fw-bold " href="index.php">Menu</a>
                             </div>
 
                             <div class="nav-item dropdown w-100 my-1 ">
@@ -54,7 +54,7 @@ if (isset($_SESSION["menudemo1admin"])) {
 
                             <div class="btn btn-secondary w-100 my-1  nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Other
+                                    View
                                 </a>
                                 <ul class="dropdown-menu mt-1">
                                     <li><a onclick="contentChanger('allProductView')" class="dropdown-item" href="#">Product list</a></li>

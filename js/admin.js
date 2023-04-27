@@ -35,17 +35,19 @@ function signIn() {
 
 function logOutAdmin() {
   fetch("api/signOutProcess.php") //our request file
-    .then(response => response.text()) //then now check response == text
-    .then(data => {     //data arrow function
-      if (data === 'log out') {  //data == 'our signOutProcess.php' response text
+    .then((response) => response.text()) //then now check response == text
+    .then((data) => {
+      //data arrow function
+      if (data === "log out") {
+        //data == 'our signOutProcess.php' response text
         window.location.reload(); //then reload signIn.php
       } else {
-        console.log('Unexpected response:', data);  //error handaling (Unexpected response)
+        console.log("Unexpected response:", data); //error handaling (Unexpected response)
       }
     })
-    .catch(error => {
-      console.error('Error:', error); //error handaling
-    })
+    .catch((error) => {
+      console.error("Error:", error); //error handaling
+    });
 }
 // product Adding Process
 function AddNewProductSave() {
@@ -66,17 +68,17 @@ function AddNewProductSave() {
         productCategoryID: CategoryId,
       }),
   })
-    .then(response => response.text()) //then now check response == text
-    .then(data => {
-      if (data === 'success') {
+    .then((response) => response.text()) //then now check response == text
+    .then((data) => {
+      if (data === "success") {
         alert("Product Adding Success");
       } else {
-        console.log('Unexpected response:', data);  //error handaling (Unexpected response)
+        console.log("Unexpected response:", data); //error handaling (Unexpected response)
       }
     })
-    .catch(error => {
-      console.error('Error:', error); //error handaling
-    })
+    .catch((error) => {
+      console.error("Error:", error); //error handaling
+    });
 }
 // add New Category
 function addNewCategory() {
@@ -87,38 +89,48 @@ function addNewCategory() {
   const formData = new FormData();
 
   // Append the image file to the formData object
-  formData.append('categoryName', JSON.stringify({ category: categoryName }));
-  formData.append('categoryImage', categoryImage);
+  formData.append("categoryName", JSON.stringify({ category: categoryName }));
+  formData.append("categoryImage", categoryImage);
 
   // Send the FormData object to the server using an AJAX request
-  fetch('api/categoryAddProcess.php', {
-    method: 'POST',
-    body: formData
+  fetch("api/categoryAddProcess.php", {
+    method: "POST",
+    body: formData,
   })
-    .then(response => response.text()) //then now check response == text
-    .then(data => {
-      if (data === 'success') {
+    .then((response) => response.text()) //then now check response == text
+    .then((data) => {
+      if (data === "success") {
         alert("Category Adding Success");
       } else {
-        console.log('Unexpected response:', data);  //error handaling (Unexpected response)
-         alert(data);
+        console.log("Unexpected response:", data); //error handaling (Unexpected response)
+        alert(data);
       }
     })
-    .catch(error => {
-      console.error('Error:', error); //error handaling
-    })
+    .catch((error) => {
+      console.error("Error:", error); //error handaling
+    });
 }
+function availabilityChangerAdmin(event) {
+  let itemId = event.target.dataset.itemid;
+  let value = event.target.dataset.value;
 
+  fetch(
+    "api/productAvailabilityProcess.php?productAvailabilityDetail=" +
+      JSON.stringify({ productID: itemId, availabilityID: value })
+  )
+    .then((res) => res.text())
+    .then((data) => console.log(data))
+    .then((err) => console.log(err));
 
-
-// test
-// let age = 21;
-// let name = "janith";
-
-// let UI = `<div className="col-12 p-0">
-// <div className="row m-0">
-// <button class="btn btn-primary">${name}</button>
-// </div>
-// </div>`;
-
-// document.body.innerHTML = UI;
+  if (value == 1) {
+    event.target.classList.add("btn-secondary");
+    event.target.classList.add("text-white");
+    event.target.classList.remove("btn-secondary");
+    event.target.classList.remove("text-white");
+  } else if (value == 2) {
+    event.target.classList.add("btn-secondary");
+    event.target.classList.add("text-white");
+    event.target.classList.remove("btn-secondary");
+    event.target.classList.remove("text-white");
+  }
+}

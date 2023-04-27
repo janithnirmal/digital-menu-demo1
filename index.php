@@ -18,7 +18,7 @@
                 <div class="row px-3 py-1 d-flex align-items-center">
                     <div class="col-3 p-0 fw-bold text-white rounded-2 ">LOGO</div>
                     <div class="col-6">
-                        <h6 class="text-white">Brand Name</h6>
+                        <h6 class="text-white text-center">Brand Name</h6>
                     </div>
                     <div class="col-3 d-flex justify-content-end">
                         <h5 class="text-warning">Menu</h5>
@@ -82,6 +82,8 @@
                                     <div class="col-2  bg-white rounded-5" style="width:70px; height:70px;">.</div>
                                 </div>
                             </div>
+                            <hr class="border border-1 my-4">
+                            <button onclick="window.location ='adminPanel.php'; " class="btn border border-2 border-secondary btn-transparent text-secondary fs-6 mt-4">Modify</button><br />
                         </div>
                     </div>
 
