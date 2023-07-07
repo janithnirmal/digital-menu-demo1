@@ -53,12 +53,15 @@ foreach ($resultObject as $categoryObject) {
             foreach ($categoryItems as $categoryItemsObject) {
             ?>
                 <div class="col-12 my-1">
-                    <div class=" text-white h-100 d-flex justify-content-between underline-hover">
+                    <div class=" text-white h-100 d-flex justify-content-between">
                         <div class="h-100 d-flex justify-content-center align-items-center py-1 p-0 m-0">
-                            <p class="p-0 m-0 fs-6 fw-bold" id=""><?php echo ($categoryItemsObject->name) ?></p>
+                            <p class="p-0 m-0 fs-6 fw-bold" id="idd"><?php echo ($categoryItemsObject->name) ?></p>
                         </div>
                         <div class="h-100 d-flex justify-content-center align-items-center py-1 p-0 m-0 ">
                             <p class="p-0 m-0 fs-6 fw-bold">$<?php echo ($categoryItemsObject->price); ?>.00</p>
+                            <div class="item-add-from-menu-btn mx-3">
+                                <i class="c-add-icon bi bi-plus-circle-fill"></i>
+                            </div>
                         </div>
                     </div>
                 </div>

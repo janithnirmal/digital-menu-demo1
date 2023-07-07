@@ -1,9 +1,13 @@
-
 .item1 {
   height: 87px;
 }
-.footer{
-    background-image: linear-gradient(black, rgb(26, 25, 25),rgb(36, 34, 34),rgb(48, 47, 47));
+.footer {
+  background-image: linear-gradient(
+    black,
+    rgb(26, 25, 25),
+    rgb(36, 34, 34),
+    rgb(48, 47, 47)
+  );
 }
 
 .item-image {
@@ -13,7 +17,6 @@
 }
 
 .dark-gradiant {
-
   z-index: 10;
   background: linear-gradient(to top right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
@@ -32,3 +35,7 @@
   color: rgb(165, 165, 165);
 }
 
+.c-add-icon:hover {
+  cursor: pointer;
+  color: rgb(189, 189, 189);
+}

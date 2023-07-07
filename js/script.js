@@ -44,10 +44,21 @@ function availableBtnColorChanger(event) {
   }
 }
 
-setInterval(() => {
-  if (clickedButtonAvailability == 1) {
-    menuLoad("available");
-  } else if (clickedButtonAvailability == 2) {
-    menuLoad("unavailable");
-  }
-}, 10000);
+try {
+  setInterval(() => {
+    if (clickedButtonAvailability == 1) {
+      menuLoad("available");
+    } else if (clickedButtonAvailability == 2) {
+      menuLoad("unavailable");
+    }
+  }, 10000);
+} catch (error) {}
+
+try {
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("test")
+    console.log(document.querySelectorAll(".item-add-from-menu-btn"));
+  });
+} catch (error) {
+  console.error;
+}
